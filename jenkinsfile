@@ -1,0 +1,14 @@
+pipeline {
+  agent { label 'MASTER'}
+  stages {
+  stage('SCM') {
+  step {
+     git branch: 'main' url: https:'//github.com/spring-projects/spring-petclinic.git'
+  
+   }
+  stage('build') {
+    sh './mvnw package'
+   }
+   }
+   }
+   }
